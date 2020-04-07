@@ -1,56 +1,3 @@
-@charset "UTF-8";
-/**
-  * Patrón 7-1
-  *
-  * Esta es la estructura del patrón 7-1 utilizado en DesafíoLatam
-  * para la enseñanza del uso correcto de patrones dentro de CSS y
-  * también para la utilización de éste dentro de estructuras de 
-  * trabajo colaborativo.
-  *
-  * @author Cristóbal Domínguez <cristobald@me.com>
-  * @since 1.0
-  *
-  */
-/*
- *
- * La carpeta abstracts/ reune todas las herramientas de SASS para el proyecto.
- * Cada variable global, función, mixin o placeholder debería estar aquí dentro.
- * 
- * La regla de oro para esta carpeta es que no deberá imprimir ni una sola línea
- * de código en el momento de la compilación del CSS. Nada como los helpers de Sass.
- * 
- * Cuando se trabaja en un proyecto muy grande con muchos archivos abstracts, podría
- * ser más interesante agruparlos por tópicos en vez de por tipo. Un ejemplo sería
- * crear las instancias typography (_typography.scss), theming (_theming.scss), etc.
- * Cada archivo contendría todos los helpers relacionados a esa instancia: variables, 
- * functions, mixins y placeholders. Hacerlo así podría hacer el código más sencillo de 
- * de mantener, especialmente cuando los archivos empiezan a crecer mucho.
- * 
- * Nota:
- * La carpeta abstracts/ podría llamarse utilities/ o helpers/, dependiendo de lo que
- * se prefiera.
- *
- * @author Cristóbal Domínguez <cristobald@me.com>
- * @since 1.0
- *
- */
-/*
- *
- * Este archivo contiene las referencias del código boilerplate de tu proyecto.
- * Aquí podrás encontrar referencias al archivo _reset.scss, a las tipografías
- * y probablemente algún otro archivo de estilos que defina de una forma estándard
- * los estilos de elementos usados en HTML.
- *
- *
- * Nota: 
- * Si tu proyecto usa muchas animaciones, deberías considerar agregar dentro de
- * esta carpeta un archivo /_animations.scss que contenga las definiciones de los
- * @keyframes de todas tus animaciones.
- *
- * @author Cristóbal Domínguez <cristobald@me.com>
- * @since 1.0
- *
- */
 body, ul, h1, h2, h3, h4, h5, h6, p {
   line-height: 1;
   margin: 0;
@@ -74,6 +21,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .section-container {
   width: 80%;
   margin: 0 auto;
@@ -95,26 +46,11 @@ h1, h2, h3, h4, h5, h6, p {
   color: #2d3047;
 }
 
-/*
- *
- * Esta carpeta contiene todo lo que hace relación con el sitio web o la aplicación.
- * Aquí encontrarás los estilos para las partes principales del sitio (header, footer, 
- * navigation, sidebar, etc), el sistema de grillas o incluso los estilos de los formularios
- *
- *
- * Nota:
- * La carpeta layout/ también podría ser llamada partials/, dependiendo de la 
- * preferencia del desarrollador.
- *
- * @author Cristóbal Domínguez <cristobald@me.com>
- * @since 1.0
- *
- */
 .main-header {
   grid-area: nav;
 }
 
-.main-section {
+.menu-seccion {
   grid-area: ms;
 }
 
@@ -130,7 +66,7 @@ h1, h2, h3, h4, h5, h6, p {
   grid-area: sks;
 }
 
-.contact-section {
+.contacto-section {
   grid-area: cs;
 }
 
@@ -160,45 +96,44 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
 }
 
-.navigation {
+.navegacion {
   position: relative;
   padding-top: 10px;
   width: 100%;
 }
-.navigation__logo {
+.navegacion__logo {
   position: absolute;
   top: 10px;
   left: 2.2rem;
 }
-.navigation__logo-img {
+.navegacion__logo-img {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   object-fit: cover;
 }
-.navigation__collapsible {
+.navegacion__desplegable {
   text-align: right;
   width: 100%;
 }
-.navigation__collapsible label {
+.navegacion__desplegable label {
   font-size: 1.8rem;
 }
-.navigation__collapsible label i {
+.navegacion__desplegable label i {
   padding: 2.2rem;
 }
-.navigation #menu {
+.navegacion #menu {
   display: none;
 }
-.navigation input:checked ~ .navigation__container {
+.navegacion input:checked ~ .navegacion__container {
   max-height: 100%;
 }
-.navigation__container {
+.navegacion__container {
   max-height: 0;
   padding: 0;
   overflow: hidden;
   background-color: #7cea9c;
 }
-.navigation__list {
+.navegacion__lista {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
@@ -206,20 +141,20 @@ h1, h2, h3, h4, h5, h6, p {
   padding-top: 0;
   text-align: center;
 }
-.navigation__item {
+.navegacion__item {
   padding: 1em;
   width: 90%;
   margin: 0 auto;
   border-bottom: solid 1px #2d3047;
 }
-.navigation__item:last-child {
+.navegacion__item:last-child {
   border-bottom: none;
 }
-.navigation__link {
+.navegacion__link {
   padding: 1em;
   color: #071013;
 }
-.navigation__link:hover {
+.navegacion__link:hover {
   text-decoration: none;
   color: gray;
 }
@@ -236,7 +171,7 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
   }
 
-  .navigation {
+  .navegacion {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -244,43 +179,43 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     padding-top: 0;
   }
-  .navigation__logo {
+  .navegacion__logo {
     position: static;
   }
-  .navigation__logo-img {
+  .navegacion__logo-img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
   }
-  .navigation__collapsible {
+  .navegacion__desplegable {
     text-align: center;
     width: 82%;
   }
-  .navigation__collapsible label {
+  .navegacion__desplegable label {
     display: none;
   }
-  .navigation__container {
+  .navegacion__container {
     max-height: 100%;
     overflow: visible;
   }
-  .navigation__list {
+  .navegacion__lista {
     display: flex;
     flex-direction: row;
     text-transform: uppercase;
     font-weight: 900;
     padding-top: 0;
   }
-  .navigation__item {
+  .navegacion__item {
     padding: 0.5em;
     width: 100%;
     border-bottom: none;
   }
-  .navigation__link {
+  .navegacion__link {
     padding: 0.5em 0;
     color: #071013;
   }
-  .navigation__link:hover {
+  .navegacion__link:hover {
     text-decoration: none;
     color: gray;
   }
@@ -297,61 +232,61 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
   }
 
-  .navigation {
+  .navegacion {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .navigation__logo-img {
+  .navegacion__logo-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
   }
-  .navigation__list {
+  .navegacion__lista {
     text-transform: uppercase;
     font-weight: 900;
     padding-top: 1.5em;
     display: block;
   }
-  .navigation__item {
+  .navegacion__item {
     padding: 0.5em 0;
   }
-  .navigation__link {
+  .navegacion__link {
     padding: 0.5em 0;
     color: #071013;
   }
-  .navigation__link:hover {
+  .navegacion__link:hover {
     text-decoration: none;
     color: gray;
   }
 }
-.main-content {
+.menu-contenido {
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
-.main-content__title {
+.menu-contenido__titulo {
   text-transform: uppercase;
   font-weight: 900;
   font-size: 2.5em;
 }
-.main-content__contact {
+.menu-contenido__contacto {
   font-size: 1.2em;
 }
-.main-content__contact--uppercase {
+.menu-contenido__contacto--uppercase {
   text-transform: uppercase;
 }
-.main-content__text {
+.menu-contenido__text {
   padding-top: 5em;
   padding-bottom: 3em;
 }
-.main-content__icons i {
+.menu-contenido__icons i {
   padding-right: 0.5em;
 }
 
 @media only screen and (min-width: 700px) {
-  .main-content__title {
+  .menu-contenido__titulo {
     font-size: 4em;
   }
 }
@@ -359,27 +294,27 @@ h1, h2, h3, h4, h5, h6, p {
   padding-top: 5rem;
   padding-bottom: 7rem;
 }
-.section-content__main-title {
+.section-content__menu-titulo {
   padding-top: 2rem;
   padding-bottom: 7rem;
 }
-.section-content__main-title h2 {
+.section-content__menu-titulo h2 {
   font-size: 3em;
   text-transform: uppercase;
   font-weight: 900;
 }
-.section-content__main-title--less-padding {
+.section-content__menu-titulo--less-padding {
   padding-bottom: 1rem;
 }
-.section-content__title-date {
+.section-content__titulo-date {
   display: static;
 }
-.section-content__text-title {
+.section-content__text-titulo {
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 700;
 }
-.section-content__text-title--black {
+.section-content__text-titulo--black {
   font-weight: 900;
 }
 .section-content__text-position {
@@ -394,38 +329,20 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @media only screen and (min-width: 700px) {
-  .section-content__title-date {
+  .section-content__titulo-date {
     display: flex;
     justify-content: space-between;
   }
 }
-.contact-form {
+.contacto-form {
   padding-top: 4rem;
 }
-.contact-form__label {
+.contacto-form__label {
   padding: 2rem 0;
   font-size: 1.2em;
 }
-.contact-form textarea {
+.contacto-form textarea {
   resize: none;
 }
-
-/*
- * 
- * Esta carpeta fue creada para componentes o módulos pequeños como por ejemplo: 
- * sliders, loaders, widgets, etc. A diferencia de la carpeta layout/ donde almacenaremos
- * los componentes que definan el wireframe del sitio/aplicación, aquí encontraremos
- * componentes que aportarán más contenido que una estructura visual.
- * 
- * Usualmente deberían haber muchos archivos en components/ debido a que los 
- * sitios/aplicaciones se empezaron a crear en base a pequeños módulos de código.
- * 
- * Nota:
- * Esta carpeta también se podría llamar modules/, dependiendo de cómo tu la prefieras.
- *
- * @author Cristóbal Domínguez <cristobald@me.com>
- * @since 1.0
- *
- */
 
 /*# sourceMappingURL=main.css.map */

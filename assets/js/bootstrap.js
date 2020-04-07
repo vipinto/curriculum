@@ -1040,10 +1040,10 @@ if (typeof jQuery === 'undefined') {
 
   var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
 
-  var DefaultWhitelist = {
+  var DefaultWhitelista = {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
-    a: ['target', 'href', 'title', 'rel'],
+    a: ['target', 'href', 'titulo', 'rel'],
     area: [],
     b: [],
     br: [],
@@ -1059,7 +1059,7 @@ if (typeof jQuery === 'undefined') {
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'alt', 'titulo', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -1130,24 +1130,24 @@ if (typeof jQuery === 'undefined') {
     var createdDocument = document.implementation.createHTMLDocument('sanitization')
     createdDocument.body.innerHTML = unsafeHtml
 
-    var whitelistKeys = $.map(whiteList, function (el, i) { return i })
+    var whitelistaKeys = $.map(whiteList, function (el, i) { return i })
     var elements = $(createdDocument.body).find('*')
 
     for (var i = 0, len = elements.length; i < len; i++) {
       var el = elements[i]
       var elName = el.nodeName.toLowerCase()
 
-      if ($.inArray(elName, whitelistKeys) === -1) {
+      if ($.inArray(elName, whitelistaKeys) === -1) {
         el.parentNode.removeChild(el)
 
         continue
       }
 
       var attributeList = $.map(el.attributes, function (el) { return el })
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
+      var whitelistaedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
 
       for (var j = 0, len2 = attributeList.length; j < len2; j++) {
-        if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
+        if (!allowedAttribute(attributeList[j], whitelistaedAttributes)) {
           el.removeAttribute(attributeList[j].nodeName)
         }
       }
@@ -1181,7 +1181,7 @@ if (typeof jQuery === 'undefined') {
     selector: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
-    title: '',
+    titulo: '',
     delay: 0,
     html: false,
     container: false,
@@ -1191,7 +1191,7 @@ if (typeof jQuery === 'undefined') {
     },
     sanitize : true,
     sanitizeFn : null,
-    whiteList : DefaultWhitelist
+    whiteList : DefaultWhitelista
   }
 
   Tooltip.prototype.init = function (type, element, options) {
@@ -1224,7 +1224,7 @@ if (typeof jQuery === 'undefined') {
 
     this.options.selector ?
       (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
-      this.fixTitle()
+      this.fixTitulo()
   }
 
   Tooltip.prototype.getDefaults = function () {
@@ -1464,16 +1464,16 @@ if (typeof jQuery === 'undefined') {
 
   Tooltip.prototype.setContent = function () {
     var $tip  = this.tip()
-    var title = this.getTitle()
+    var titulo = this.getTitulo()
 
     if (this.options.html) {
       if (this.options.sanitize) {
-        title = sanitizeHtml(title, this.options.whiteList, this.options.sanitizeFn)
+        titulo = sanitizeHtml(titulo, this.options.whiteList, this.options.sanitizeFn)
       }
 
-      $tip.find('.tooltip-inner').html(title)
+      $tip.find('.tooltip-inner').html(titulo)
     } else {
-      $tip.find('.tooltip-inner').text(title)
+      $tip.find('.tooltip-inner').text(titulo)
     }
 
     $tip.removeClass('fade in top bottom left right')
@@ -1511,15 +1511,15 @@ if (typeof jQuery === 'undefined') {
     return this
   }
 
-  Tooltip.prototype.fixTitle = function () {
+  Tooltip.prototype.fixTitulo = function () {
     var $e = this.$element
-    if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
-      $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
+    if ($e.attr('titulo') || typeof $e.attr('data-original-titulo') != 'string') {
+      $e.attr('data-original-titulo', $e.attr('titulo') || '').attr('titulo', '')
     }
   }
 
   Tooltip.prototype.hasContent = function () {
-    return this.getTitle()
+    return this.getTitulo()
   }
 
   Tooltip.prototype.getPosition = function ($element) {
@@ -1579,15 +1579,15 @@ if (typeof jQuery === 'undefined') {
     return delta
   }
 
-  Tooltip.prototype.getTitle = function () {
-    var title
+  Tooltip.prototype.getTitulo = function () {
+    var titulo
     var $e = this.$element
     var o  = this.options
 
-    title = $e.attr('data-original-title')
-      || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
+    titulo = $e.attr('data-original-titulo')
+      || (typeof o.titulo == 'function' ? o.titulo.call($e[0]) :  o.titulo)
 
-    return title
+    return titulo
   }
 
   Tooltip.prototype.getUID = function (prefix) {
@@ -1718,7 +1718,7 @@ if (typeof jQuery === 'undefined') {
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-titulo"></h3><div class="popover-content"></div></div>'
   })
 
 
@@ -1735,26 +1735,26 @@ if (typeof jQuery === 'undefined') {
 
   Popover.prototype.setContent = function () {
     var $tip    = this.tip()
-    var title   = this.getTitle()
+    var titulo   = this.getTitulo()
     var content = this.getContent()
 
     if (this.options.html) {
       var typeContent = typeof content
 
       if (this.options.sanitize) {
-        title = this.sanitizeHtml(title)
+        titulo = this.sanitizeHtml(titulo)
 
         if (typeContent === 'string') {
           content = this.sanitizeHtml(content)
         }
       }
 
-      $tip.find('.popover-title').html(title)
+      $tip.find('.popover-titulo').html(titulo)
       $tip.find('.popover-content').children().detach().end()[
         typeContent === 'string' ? 'html' : 'append'
       ](content)
     } else {
-      $tip.find('.popover-title').text(title)
+      $tip.find('.popover-titulo').text(titulo)
       $tip.find('.popover-content').children().detach().end().text(content)
     }
 
@@ -1762,11 +1762,11 @@ if (typeof jQuery === 'undefined') {
 
     // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
     // this manually by checking the contents.
-    if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
+    if (!$tip.find('.popover-titulo').html()) $tip.find('.popover-titulo').hide()
   }
 
   Popover.prototype.hasContent = function () {
-    return this.getTitle() || this.getContent()
+    return this.getTitulo() || this.getContent()
   }
 
   Popover.prototype.getContent = function () {

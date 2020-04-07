@@ -9,7 +9,7 @@
   text-align: center;
 }
 
-.navigation {
+.navegacion {
   position: relative;
   padding-top: 10px;
   width: 100%;
@@ -27,7 +27,7 @@
     object-fit: cover;
   }
 
-  &__collapsible {
+  &__desplegable {
     text-align: right;
     width: 100%;
 
@@ -44,7 +44,7 @@
     display: none;
   }
 
-  input:checked ~ .navigation__container {
+  input:checked ~ .navegacion__container {
     max-height: 100%;
   }
 
@@ -55,7 +55,7 @@
     background-color: $green;
   }
 
-  &__list {
+  &__lista {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
@@ -98,7 +98,7 @@
     text-align: center;
   }
   
-  .navigation {
+  .navegacion {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -117,7 +117,7 @@
       object-fit: cover;
     }
 
-    &__collapsible {
+    &__desplegable {
       text-align: center;
       width: 82%;
   
@@ -131,7 +131,7 @@
       overflow: visible;
     }
 
-    &__list {
+    &__lista {
       display: flex;
       flex-direction: row;
       text-transform: uppercase;
@@ -169,7 +169,7 @@
     text-align: center;
   }
 
-  .navigation {
+  .navegacion {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,7 +181,7 @@
       object-fit: cover;
     }
 
-    &__list {
+    &__lista {
       text-transform: uppercase;
       font-weight: $font-black;
       padding-top: 1.5em;

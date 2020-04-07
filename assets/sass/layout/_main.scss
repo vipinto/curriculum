@@ -1,15 +1,15 @@
-.main-content {
+.menu-contenido {
     min-height: 100vh;
     display: flex;
     align-items: center;
 
-    &__title {
+    &__titulo {
         text-transform: uppercase;
         font-weight: $font-black;
         font-size: 2.5em;
     }
 
-    &__contact {
+    &__contacto {
         font-size: 1.2em;
 
         &--uppercase {
@@ -30,9 +30,9 @@
 }
 
 @media only screen and (min-width: 700px) {
-    .main-content {
+    .menu-contenido {
     
-        &__title {
+        &__titulo {
             font-size: 4em;
         }
     }

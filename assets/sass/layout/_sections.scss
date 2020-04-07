@@ -2,7 +2,7 @@
     padding-top: 5rem;
     padding-bottom: 7rem;
 
-    &__main-title {
+    &__menu-titulo {
         padding-top: 2rem;
         padding-bottom: 7rem;
 
@@ -17,11 +17,11 @@
         }
     }
 
-    &__title-date {
+    &__titulo-date {
         display: static;
     }
 
-    &__text-title {
+    &__text-titulo {
         text-transform: uppercase;
         font-size: 2em;
         font-weight: $font-bold;
@@ -48,7 +48,7 @@
 @media only screen and (min-width: 700px) {
     .section-content {
     
-        &__title-date {
+        &__titulo-date {
             display: flex;
             justify-content: space-between;
         }
