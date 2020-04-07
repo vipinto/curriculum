@@ -1,0 +1,56 @@
+.section-content {
+    padding-top: 5rem;
+    padding-bottom: 7rem;
+
+    &__main-title {
+        padding-top: 2rem;
+        padding-bottom: 7rem;
+
+        h2 {
+            font-size: 3em;
+            text-transform: uppercase;
+            font-weight: $font-black;
+        }
+
+        &--less-padding {
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__title-date {
+        display: static;
+    }
+
+    &__text-title {
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: $font-bold;
+
+        &--black {
+            font-weight: $font-black;
+        }
+    }
+
+    &__text-position {
+        padding-bottom: 3em;
+    }
+
+    &__text-desc {
+        padding-bottom: 3.5em;
+    }
+
+    &__text-skills {
+        padding-top: 2em;
+        padding-bottom: 5em;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .section-content {
+    
+        &__title-date {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

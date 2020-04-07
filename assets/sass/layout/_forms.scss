@@ -1,0 +1,12 @@
+.contact-form {
+    padding-top: 4rem;
+
+    &__label {
+        padding: 2rem 0;
+        font-size: 1.2em;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

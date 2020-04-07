@@ -1,0 +1,39 @@
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: $font-black;
+        font-size: 2.5em;
+    }
+
+    &__contact {
+        font-size: 1.2em;
+
+        &--uppercase {
+            text-transform: uppercase;
+        }
+    }
+
+    &__text {
+        padding-top: 5em;
+        padding-bottom: 3em;
+    }
+
+    &__icons {
+        i {
+            padding-right: .5em;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .main-content {
+    
+        &__title {
+            font-size: 4em;
+        }
+    }
+}
