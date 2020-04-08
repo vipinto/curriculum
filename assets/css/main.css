@@ -31,7 +31,7 @@ html {
 }
 
 .bg-green {
-  background-color: #7cea9c;
+  background-color: #000;
 }
 
 .bottom-line {
@@ -39,11 +39,15 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  color: #2d3047;
+  color: #504f4f;
+}
+
+.fab {
+  padding-right: 30px;
 }
 
 .main-header {
@@ -131,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p {
   max-height: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7cea9c;
+  background-color: #000;
 }
 .navegacion__lista {
   display: flex;
@@ -144,15 +148,15 @@ h1, h2, h3, h4, h5, h6, p {
 .navegacion__item {
   padding: 1em;
   width: 90%;
-  margin: 0 auto;
-  border-bottom: solid 1px #2d3047;
+  margin: 10px auto;
+  border-bottom: solid 1px #504f4f;
 }
 .navegacion__item:last-child {
   border-bottom: none;
 }
 .navegacion__link {
   padding: 1em;
-  color: #071013;
+  color: #fff;
 }
 .navegacion__link:hover {
   text-decoration: none;
@@ -203,7 +207,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     flex-direction: row;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     padding-top: 0;
   }
   .navegacion__item {
@@ -213,7 +217,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
   .navegacion__link {
     padding: 0.5em 0;
-    color: #071013;
+    color: #fff;
   }
   .navegacion__link:hover {
     text-decoration: none;
@@ -245,7 +249,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
   .navegacion__lista {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
     padding-top: 1.5em;
     display: block;
   }
@@ -254,7 +258,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
   .navegacion__link {
     padding: 0.5em 0;
-    color: #071013;
+    color: #fff;
   }
   .navegacion__link:hover {
     text-decoration: none;
@@ -324,8 +328,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding-bottom: 3.5em;
 }
 .section-content__text-skills {
-  padding-top: 2em;
-  padding-bottom: 5em;
+  padding-top: 1em;
 }
 
 @media only screen and (min-width: 700px) {
