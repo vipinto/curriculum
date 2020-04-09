@@ -41,6 +41,9 @@ html {
 body {
   font-family: "Barlow", sans-serif;
 }
+body h1 {
+  font-family: "Roboto Mono", monospace;
+}
 
 h1, h2, h3, h4, h5, h6, p {
   color: #504f4f;
@@ -62,11 +65,11 @@ h1, h2, h3, h4, h5, h6, p {
   grid-area: exs;
 }
 
-.education-section {
+.seccion-educacion {
   grid-area: eds;
 }
 
-.skills-section {
+.seccion-habilidades {
   grid-area: sks;
 }
 
@@ -281,7 +284,7 @@ h1, h2, h3, h4, h5, h6, p {
 .menu-contenido__contacto--uppercase {
   text-transform: uppercase;
 }
-.menu-contenido__text {
+.menu-contenido__texto {
   padding-top: 5em;
   padding-bottom: 3em;
 }
@@ -294,45 +297,45 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 4em;
   }
 }
-.section-content {
+.seccion-contenido {
   padding-top: 5rem;
   padding-bottom: 7rem;
 }
-.section-content__menu-titulo {
+.seccion-contenido__menu-titulo {
   padding-top: 2rem;
   padding-bottom: 7rem;
 }
-.section-content__menu-titulo h2 {
+.seccion-contenido__menu-titulo h2 {
   font-size: 3em;
   text-transform: uppercase;
   font-weight: 900;
 }
-.section-content__menu-titulo--less-padding {
+.seccion-contenido__menu-titulo--less-padding {
   padding-bottom: 1rem;
 }
-.section-content__titulo-date {
+.seccion-contenido__titulo-fecha {
   display: static;
 }
-.section-content__text-titulo {
+.seccion-contenido__texto-titulo {
   text-transform: uppercase;
   font-size: 2em;
   font-weight: 700;
 }
-.section-content__text-titulo--black {
+.seccion-contenido__texto-titulo--black {
   font-weight: 900;
 }
-.section-content__text-position {
+.seccion-contenido__texto-position {
   padding-bottom: 3em;
 }
-.section-content__text-desc {
+.seccion-contenido__texto-desc {
   padding-bottom: 3.5em;
 }
-.section-content__text-skills {
+.seccion-contenido__texto-habilidades {
   padding-top: 1em;
 }
 
 @media only screen and (min-width: 700px) {
-  .section-content__titulo-date {
+  .seccion-contenido__titulo-fecha {
     display: flex;
     justify-content: space-between;
   }
@@ -344,7 +347,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 2rem 0;
   font-size: 1.2em;
 }
-.contacto-form textarea {
+.contacto-form textoarea {
   resize: none;
 }
 

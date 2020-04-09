@@ -1,4 +1,4 @@
-.section-content {
+.seccion-contenido {
     padding-top: 5rem;
     padding-bottom: 7rem;
 
@@ -17,11 +17,11 @@
         }
     }
 
-    &__titulo-date {
+    &__titulo-fecha {
         display: static;
     }
 
-    &__text-titulo {
+    &__texto-titulo {
         text-transform: uppercase;
         font-size: 2em;
         font-weight: $font-bold;
@@ -31,23 +31,23 @@
         }
     }
 
-    &__text-position {
+    &__texto-position {
         padding-bottom: 3em;
     }
 
-    &__text-desc {
+    &__texto-desc {
         padding-bottom: 3.5em;
     }
 
-    &__text-skills {
+    &__texto-habilidades {
         padding-top: 1em;
     }
 }
 
 @media only screen and (min-width: 700px) {
-    .section-content {
+    .seccion-contenido {
     
-        &__titulo-date {
+        &__titulo-fecha {
             display: flex;
             justify-content: space-between;
         }

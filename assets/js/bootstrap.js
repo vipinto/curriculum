@@ -139,7 +139,7 @@ if (typeof jQuery === 'undefined') {
   Button.VERSION  = '3.4.1'
 
   Button.DEFAULTS = {
-    loadingText: 'loading...'
+    loadingtexto: 'loading...'
   }
 
   Button.prototype.setState = function (state) {
@@ -148,15 +148,15 @@ if (typeof jQuery === 'undefined') {
     var val  = $el.is('input') ? 'val' : 'html'
     var data = $el.data()
 
-    state += 'Text'
+    state += 'texto'
 
-    if (data.resetText == null) $el.data('resetText', $el[val]())
+    if (data.resettexto == null) $el.data('resettexto', $el[val]())
 
     // push to event loop to allow forms to submit
     setTimeout($.proxy(function () {
       $el[val](data[state] == null ? this.options[state] : data[state])
 
-      if (state == 'loadingText') {
+      if (state == 'loadingtexto') {
         this.isLoading = true
         $el.addClass(d).attr(d, d).prop(d, true)
       } else if (this.isLoading) {
@@ -285,7 +285,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   Carousel.prototype.keydown = function (e) {
-    if (/input|textarea/i.test(e.target.tagName)) return
+    if (/input|textoarea/i.test(e.target.tagName)) return
     switch (e.which) {
       case 37: this.prev(); break
       case 39: this.next(); break
@@ -534,7 +534,7 @@ if (typeof jQuery === 'undefined') {
 
       if (!$parent.hasClass('open')) return
 
-      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+      if (e && e.type == 'click' && /input|textoarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
 
       $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
 
@@ -582,7 +582,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   Dropdown.prototype.keydown = function (e) {
-    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+    if (!/(38|40|27|32)/.test(e.which) || /input|textoarea/i.test(e.target.tagName)) return
 
     var $this = $(this)
 
@@ -817,7 +817,7 @@ if (typeof jQuery === 'undefined') {
 
   Modal.prototype.resize = function () {
     if (this.isShown) {
-      $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
+      $(window).on('resize.bs.modal', $.proxy(this.handleUpfecha, this))
     } else {
       $(window).off('resize.bs.modal')
     }
@@ -893,7 +893,7 @@ if (typeof jQuery === 'undefined') {
 
   // these following methods are used to handle overflowing modals
 
-  Modal.prototype.handleUpdate = function () {
+  Modal.prototype.handleUpfecha = function () {
     this.adjustDialog()
   }
 
@@ -1103,7 +1103,7 @@ if (typeof jQuery === 'undefined') {
       return value instanceof RegExp
     })
 
-    // Check if a regular expression validates the attribute.
+    // Check if a regular expression valifechas the attribute.
     for (var i = 0, l = regExp.length; i < l; i++) {
       if (attrName.match(regExp[i])) {
         return true
@@ -1473,7 +1473,7 @@ if (typeof jQuery === 'undefined') {
 
       $tip.find('.tooltip-inner').html(titulo)
     } else {
-      $tip.find('.tooltip-inner').text(titulo)
+      $tip.find('.tooltip-inner').texto(titulo)
     }
 
     $tip.removeClass('fade in top bottom left right')
@@ -1754,8 +1754,8 @@ if (typeof jQuery === 'undefined') {
         typeContent === 'string' ? 'html' : 'append'
       ](content)
     } else {
-      $tip.find('.popover-titulo').text(titulo)
-      $tip.find('.popover-content').children().detach().end().text(content)
+      $tip.find('.popover-titulo').texto(titulo)
+      $tip.find('.popover-content').children().detach().end().texto(content)
     }
 
     $tip.removeClass('fade top bottom left right in')
